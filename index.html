@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="bn">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>TR Earning Bot</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header><div class="brand">💚 TR EARNING BOT <span>👑</span></div><div id="user">Telegram Mini App</div></header>
+  <main>
+    <section id="home" class="page active">
+      <div class="balance"><small>আপনার ব্যালেন্স</small><strong>৳<span id="balance">0</span></strong><p id="welcome">স্বাগতম!</p></div>
+      <div class="tiles">
+        <button data-go="deposit">＋ Deposit</button><button data-go="withdraw">↗ Withdraw</button>
+        <button data-go="refer">♧ Refer & Earn</button><button data-go="history">▤ History</button>
+      </div>
+      <h3>সাম্প্রতিক কাজ</h3><div id="homeTasks" class="stack"></div>
+    </section>
+    <section id="tasks" class="page"><h2>📋 Tasks</h2><div id="taskList" class="stack"></div></section>
+    <section id="refer" class="page"><h2>♧ Refer & Earn</h2><p>আপনার রেফারেল লিংক শেয়ার করুন। যোগ্য ও যাচাইকৃত আয়ের ১০% কমিশন — শর্ত প্রযোজ্য।</p><div class="panel"><code id="refLink">লিংক তৈরি হচ্ছে…</code><button id="copyRef">লিংক কপি</button></div></section>
+    <section id="profile" class="page"><h2>👤 My Profile</h2><div class="panel"><p id="profileName">নাম: —</p><p id="profileId">Telegram ID: —</p></div><div class="stack"><button data-go="deposit">Deposit</button><button data-go="withdraw">Withdraw</button><button data-go="history">Transaction History</button><button data-go="support">Support</button></div></section>
+    <section id="deposit" class="page"><h2>＋ Deposit Request</h2><div class="panel"><p>Demo preview: কোনো বাস্তব টাকা পাঠাবেন না।</p><label>পরিমাণ (৳)<input id="depAmount" type="number" min="1" placeholder="যেমন 100"></label><label>পেমেন্ট রেফারেন্স<input id="depRef" placeholder="Demo reference"></label><button id="sendDeposit">Request জমা দিন</button></div></section>
+    <section id="withdraw" class="page"><h2>↗ Withdraw Request</h2><div class="panel"><p>সর্বনিম্ন উত্তোলন: ৳150 (ডেমো)।</p><label>মাধ্যম<select id="method"><option>bKash</option><option>Nagad</option></select></label><label>নম্বর<input id="number" inputmode="numeric" placeholder="01XXXXXXXXX"></label><label>পরিমাণ (৳)<input id="wdAmount" type="number" min="150" placeholder="150"></label><button id="sendWithdraw">Request জমা দিন</button></div></section>
+    <section id="history" class="page"><h2>▤ Transaction History</h2><div id="historyList" class="stack"></div></section>
+    <section id="support" class="page"><h2>☎ Support</h2><div class="panel">সহায়তার জন্য বট অ্যাডমিনের সাথে যোগাযোগ করুন।<p><a href="https://t.me/wenaradmin">Contact Admin</a></p></div></section>
+    <section id="admin" class="page"><h2>⚙ Admin Panel</h2><div class="panel"><p>শুধু নির্ধারিত Admin ID-এর জন্য।</p><label>নতুন Task-এর নাম<input id="newTask" placeholder="Task title"></label><label>Reward (৳)<input id="newReward" type="number" placeholder="50"></label><button id="addTask">Task যোগ করুন</button></div><div id="adminTasks" class="stack"></div><p class="note">এটি ফ্রন্টএন্ড ডেমো। বাস্তব ব্যবহারকারীর ডেটা, ব্যালেন্স বা পেমেন্ট যাচাইয়ের জন্য নিরাপদ সার্ভার/API প্রয়োজন।</p></section>
+  </main>
+  <nav><button data-go="home">⌂<small>Home</small></button><button data-go="tasks">▣<small>Task</small></button><button data-go="refer">♧<small>Refer</small></button><button data-go="profile">☻<small>Profile</small></button></nav>
+  <script src="app.js"></script>
+</body></html>
